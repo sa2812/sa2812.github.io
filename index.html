@@ -5,103 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 	<link rel="shortcut icon" href="./img/favicon.png">
 	<link rel="stylesheet" type="text/css" href="./css/foundation.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<style>
-		body {
-			background-color: #000;
-			overflow-x: hidden;
-		}
 
-		@font-face {
-			font-family: Raleway;
-			src: url('./css/Raleway-Regular.ttf');
-			font-weight: 400;
-		}
-
-		@font-face {
-			font-family: vcr;
-			src: url('./css/vcr.ttf');
-			font-weight: 400;
-		}
-
-		@font-face {
-			font-family: Quicksand;
-			src: url('./css/Quicksand-Regular.ttf');
-			font-weight: 400;
-		}
-
-		#firstpage canvas {
-			background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('../img/nasabg.jpg');
-			max-width: 100%;
-			margin: 0;
-			overflow: hidden;
-			position: absolute;
-			max-width: 100%;
-		}
-
-		#heading-text {
-			position: absolute;
-			z-index: 1;
-			padding-top:40vh;
-		}
-
-		#heading-text h1 {
-			color: #f9f9f9;
-			font-family: Quicksand, Arial, serif;
-			letter-spacing: 0.5rem;
-			cursor: default;
-			font-weight: 400;
-			font-size: 5rem;
-		}
-
-		@media (max-width: 720px) {
-			#heading-text {
-				position: absolute;
-				z-index: 1;
-				padding-top:30vh;
-			}
-    		#heading-text h1 {
-        		font-size: 4rem;
-    		}
-		}
-
-		.main {
-			position: relative;
-		}
-
-		h2 {
-			font-family: Quicksand, Arial, serif;
-			color: #63e9f8;
-			font-size: 2.5rem;
-		}
-
-		h3 {
-			font-family: Quicksand, Arial, serif;
-			color: #63e9f8;
-			font-size: 1.75rem;
-		}
-
-		h4 {
-			font-family: Quicksand, Arial;
-		}
-
-		p {
-			color: #f2f2f2;
-			font-family: Raleway, Arial, serif;
-			font-size: 1rem;
-		}
-
-		p.lead {
-			font-size: 1.25rem;
-		}
-
-		html,body{ 
-			margin:0;
-		}
-
-		.sdokw {
-			font-family: vcr;
-		}
 
 	</style>
 </head>
@@ -113,7 +20,7 @@
 					<h1 class="text-center">Sunny Amrat</h1>
 					<div class="small-12 medium-10 small-centered columns">
 						<br><br><br><br>
-						<h4 class="text-center"><a href="/about.html">About</a> | <a href="https://github.com/sa2812"><i class="fa fa-github"></i></a> <a href="https://uk.linkedin.com/in/sunnyamrat"><i class="fa fa-linkedin-square"></i></a> <a href="https://www.instagram.com/sunnyamrat/"><i class="fa fa-instagram"></i></a> | <a href="https://blog.sunnyamrat.com">Blog</a></h4>
+						<h4 class="text-center"><!-- <a href="./about.html">About</a> |  --><a href="https://github.com/sa2812"><i class="fa fa-github"></i></a> <a href="https://uk.linkedin.com/in/sunnyamrat"><i class="fa fa-linkedin-square"></i></a> <a href="https://www.instagram.com/sunnyamrat/"><i class="fa fa-instagram"></i></a> | <a href="https://blog.sunnyamrat.com">Blog</a></h4>
 						<h5 class="text-center sdokw"><a href="http://sixdegreesofkanyewest.com" target="_blank">Six Degrees of Kanye West</a></h5>
 					</div>
 					<script src="./js/three.js"></script>
@@ -132,7 +39,6 @@
 
 	  ga('create', 'UA-54152378-1', 'auto');
 	  ga('send', 'pageview');
-	  ga('set', 'userId', {{USER_ID}}); // Set the user ID using signed-in user_id.
 
 	</script>
 </html>

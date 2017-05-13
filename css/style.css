@@ -1,148 +1,3 @@
-body {
-  background-color: #000;
-  overflow-x: hidden;
-}
-
-#firstpage canvas {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('../img/nasabg.jpg');
-  margin: 0;
-  overflow: hidden;
-  position: absolute;
-  width:100%;
-  max-width: 100%;
-}
-
-#secondpage {
-  background: #2271be; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #2271be 0%, #0e4ea9 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#2271be), color-stop(100%,#0e4ea9)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #2271be 0%,#0e4ea9 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #2271be 0%,#0e4ea9 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #2271be 0%,#0e4ea9 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #2271be 0%,#0e4ea9 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2271be', endColorstr='#0e4ea9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-#heading-text {
-  position: absolute;
-  z-index: 1;
-  padding-top:43vh;
-}
-
-#heading-text h1 {
-  color: #f9f9f9;
-  font-family: 'Quicksand', Arial, serif;
-  letter-spacing: 0.5rem;
-  cursor: default;
-  font-weight: 400;
-  font-size: 5rem;
-}
-
-@media screen and (max-width: 640px) {
-  #heading-text h1 {
-    font-size: 2rem;
-    letter-spacing: 0.25rem;
-  }
-}
-
-.main {
-  position: relative;
-}
-
-h2 {
-  font-family: 'Quicksand', Arial, serif;
-  color: #63e9f8;
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-family: 'Quicksand', Arial, serif;
-  color: #63e9f8;
-  font-size: 1.75rem;
-}
-
-p {
-  color: #f2f2f2;
-  font-family: 'Raleway', Arial, serif;
-  font-size: 1rem;
-}
-
-p.lead {
-  font-size: 1.25rem;
-}
-
-.about-heading h2, #portfolio h2 {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  color: #E1E1E1;
-  font-size: 4rem;
-  margin: 0;
-  text-align: center;
-}
-
-.about-heading p, #portfolio p {
-  color: #E2E2E2;
-  text-align: center;
-}
-
-
-@media screen and (max-width: 640px) {
-  .about-heading h2 {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    font-size: 2.25rem;
-  }
-
-  .about-heading p {
-    font-size: 1rem;
-  }
-}
-
-#downArrow {
-  padding-top: 100px;
-}
-
-@media screen and (max-height: 480px) {
-  #downArrow {
-    padding-top: 40px;
-  }
-}
-
-html,body{ 
-  margin:0;
-}
-
-#particle-js canvas{
-  display:block;
-  vertical-align:bottom;
-  position: absolute;
-}
-
-#particles-js{
-  height:40vh;
-  background-color: rgba(0,0,0,0);
-}
-
-#thirdpage {
-  background: -moz-linear-gradient(top,  rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%). url("../img/bg3.jpg"); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.85)), color-stop(100%,rgba(0,0,0,0))), url("../img/bg3.jpg"); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%), url("../img/bg3.jpg"); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%), url("../img/bg3.jpg"); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%), url("../img/bg3.jpg"); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%), url("../img/bg3.jpg"); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-  background-size: 1920px;
-  background-position: right;
-}
-
-.sdokw {
-  font-family: 'vcr';
-}
-
-.sdokw:hover {
-  color: #F79C6A;
-}
-
     body {
       background-color: #000;
       overflow-x: hidden;
@@ -150,19 +5,19 @@ html,body{
 
     @font-face {
       font-family: Raleway;
-      src: url('./css/Raleway-Regular.ttf');
+      src: url('Raleway-Regular.ttf');
       font-weight: 400;
     }
 
     @font-face {
       font-family: vcr;
-      src: url('./css/vcr.ttf');
+      src: url('vcr.ttf');
       font-weight: 400;
     }
 
     @font-face {
       font-family: Quicksand;
-      src: url('./css/Quicksand-Regular.ttf');
+      src: url('Quicksand-Regular.ttf');
       font-weight: 400;
     }
 
@@ -238,4 +93,3 @@ html,body{
     .sdokw {
       font-family: vcr;
     }
-    
