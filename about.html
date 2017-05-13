@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>About | Sunny Amrat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+	<link rel="shortcut icon" href="./img/favicon.png">
+	<link rel="stylesheet" type="text/css" href="./css/foundation.min.css" />
+	<style>
+		@font-face {
+			font-family: Raleway;
+			src: url('./css/Raleway-Regular.ttf');
+			font-weight: 400;
+		}
+
+		@font-face {
+			font-family: Quicksand;
+			src: url('./css/Quicksand-Regular.ttf');
+			font-weight: 400;
+		}
+
+		body {
+			background: #2271be; /* Old browsers */
+			background: -moz-linear-gradient(-45deg,  #2271be 0%, #0e4ea9 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#2271be), color-stop(100%,#0e4ea9)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(-45deg,  #2271be 0%,#0e4ea9 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(-45deg,  #2271be 0%,#0e4ea9 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(-45deg,  #2271be 0%,#0e4ea9 100%); /* IE10+ */
+			background: linear-gradient(135deg,  #2271be 0%,#0e4ea9 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2271be', endColorstr='#0e4ea9',GradientType=1 );
+		}
+
+		#heading-text {
+			position: absolute;
+			z-index: 1;
+			padding-top:43vh;
+		}
+
+		#heading-text h1 {
+			color: #f9f9f9;
+			font-family: Quicksand, Arial, serif;
+			letter-spacing: 0.5rem;
+			cursor: default;
+			font-weight: 400;
+			font-size: 5rem;
+		}
+
+		.main {
+			position: relative;
+		}
+
+		h2 {
+			font-family: Quicksand, Arial, serif;
+			color: #63e9f8;
+			font-size: 2.5rem;
+		}
+
+		h3 {
+			font-family: Quicksand, Arial, serif;
+			color: #63e9f8;
+			font-size: 1.75rem;
+		}
+
+		p {
+			color: #f2f2f2;
+			font-family: Raleway, Arial, serif;
+			font-size: 1rem;
+		}
+
+		p.lead {
+			font-size: 1.25rem;
+		}
+
+		.about-heading h2 {
+			padding-top: 60px;
+			padding-bottom: 60px;
+			color: #E1E1E1;
+			font-size: 4rem;
+			margin: 0;
+			text-align: center;
+		}
+
+		.about-heading p {
+			color: #E2E2E2;
+			text-align: center;
+		}
+
+		@media screen and (max-width: 640px) {
+			.about-heading h2 {
+				padding-top: 30px;
+				padding-bottom: 20px;
+				font-size: 2.25rem;
+			}
+
+			.about-heading p {
+				font-size: 1rem;
+			}
+			#heading-text h1 {
+				font-size: 2rem;
+				letter-spacing: 0.25rem;
+			}
+		}
+
+		html,body{ 
+			margin:0;
+		}
+
+		#particle-js canvas{
+			display:block;
+			vertical-align:bottom;
+			position: absolute;
+		}
+
+		#particles-js{
+			height:40vh;
+			background-color: rgba(0,0,0,0);
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- <section id="secondpage"> -->
+			<div class="about row">
+				<div class="about-heading">
+					<div class="large-12 columns">
+						<h2>About</h2>
+					</div>
+				</div>
+			</div>
+			<div id="particles-js" class="show-for-large-up">
+			</div>
+		<!-- </section> -->
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/particles.min.js"></script>
+	<script>
+		particlesJS('particles-js', {
+			particles: {
+				color: '#CCE2F2',
+				shape: 'circle',
+				opacity: 1,
+				size: 2.5,
+				size_random: true,
+				nb: 100,
+				line_linked: {
+					enable_auto: true,
+					distance: 250,
+					color: '#fff',
+					opacity: 0.5,
+					width: 1,
+					condensed_mode: {
+						enable: false,
+						rotateX: 600,
+						rotateY: 600
+					}
+				},
+				anim: {
+					enable: true,
+					speed: 1.5
+				}
+			},
+			interactivity: {
+				enable: true,
+				mouse: {
+					distance: 250
+				},
+				detect_on: 'canvas',
+				mode: 'grab',
+				line_linked: {
+					opacity: 0.5
+				},
+				events: {
+					onclick: {
+						push_particles: {
+							enable: true,
+							nb: 4
+						}
+					}
+				}
+			},
+			retina_detect: true
+		});
+	</script>
+</body>
+</html>
