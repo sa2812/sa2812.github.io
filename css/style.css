@@ -1,95 +1,97 @@
-    body {
-      background-color: #000;
-      overflow-x: hidden;
-    }
+body {
+  background-color: #000;
+  overflow-x: hidden;
+}
 
-    @font-face {
-      font-family: Raleway;
-      src: url('Raleway-Regular.ttf');
-      font-weight: 400;
-    }
+@font-face {
+  font-family: Raleway;
+  src: url('Raleway-Regular.ttf');
+  font-weight: 400;
+}
 
-    @font-face {
-      font-family: vcr;
-      src: url('vcr.ttf');
-      font-weight: 400;
-    }
+@font-face {
+  font-family: vcr;
+  src: url('vcr.ttf');
+  font-weight: 400;
+}
 
-    @font-face {
-      font-family: Quicksand;
-      src: url('Quicksand-Regular.ttf');
-      font-weight: 400;
-    }
+@font-face {
+  font-family: Quicksand;
+  src: url('Quicksand-Regular.ttf');
+  font-weight: 400;
+}
 
-    #firstpage canvas {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('../img/nasabg.jpg');
-      max-width: 100%;
-      margin: 0;
-      overflow: hidden;
-      position: absolute;
-      max-width: 100%;
-    }
+#firstpage canvas {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('../img/nasabg.jpg');
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  max-width: 100%;
+}
 
-    #heading-text {
-      position: absolute;
-      z-index: 1;
-      padding-top:40vh;
-    }
+#heading-text {
+  position: absolute;
+  z-index: 1;
+  /*padding-top:40vh;*/
+  top: 50%;
+  transform: translateY(-50%);*/
+}
 
-    #heading-text h1 {
-      color: #f9f9f9;
-      font-family: Quicksand, Arial, serif;
-      letter-spacing: 0.5rem;
-      cursor: default;
-      font-weight: 400;
-      font-size: 5rem;
-    }
+#heading-text h1 {
+  color: #f9f9f9;
+  font-family: Quicksand, Arial, serif;
+  letter-spacing: 0.5rem;
+  cursor: default;
+  font-weight: 400;
+  font-size: 5rem;
+}
 
-    @media (max-width: 720px) {
-      #heading-text {
-        position: absolute;
-        z-index: 1;
-        padding-top:30vh;
-      }
-        #heading-text h1 {
-            font-size: 4rem;
-        }
-    }
+@media (max-width: 720px) {
+  #heading-text {
+    position: absolute;
+    z-index: 1;
+    padding-top:30vh;
+}
+#heading-text h1 {
+    font-size: 4rem;
+}
+}
 
-    .main {
-      position: relative;
-    }
+.main {
+  position: relative;
+}
 
-    h2 {
-      font-family: Quicksand, Arial, serif;
-      color: #63e9f8;
-      font-size: 2.5rem;
-    }
+h2 {
+  font-family: Quicksand, Arial, serif;
+  color: #63e9f8;
+  font-size: 2.5rem;
+}
 
-    h3 {
-      font-family: Quicksand, Arial, serif;
-      color: #63e9f8;
-      font-size: 1.75rem;
-    }
+h3 {
+  font-family: Quicksand, Arial, serif;
+  color: #63e9f8;
+  font-size: 1.75rem;
+}
 
-    h4 {
-      font-family: Quicksand, Arial;
-    }
+h4 {
+  font-family: Quicksand, Arial;
+}
 
-    p {
-      color: #f2f2f2;
-      font-family: Raleway, Arial, serif;
-      font-size: 1rem;
-    }
+p {
+  color: #f2f2f2;
+  font-family: Raleway, Arial, serif;
+  font-size: 1rem;
+}
 
-    p.lead {
-      font-size: 1.25rem;
-    }
+p.lead {
+  font-size: 1.25rem;
+}
 
-    html,body{ 
-      margin:0;
-    }
+html,body{ 
+  margin:0;
+}
 
-    .sdokw {
-      font-family: vcr;
-    }
+.sdokw {
+  font-family: vcr;
+}
