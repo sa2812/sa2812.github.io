@@ -32,8 +32,8 @@ function gridData(temp, N) {
 	return data;
 }
 
-var gridData1 = gridData(0, 60);	
-var gridData2 = gridData(1, 60);	
+var gridData1 = gridData(0, 50);	
+var gridData2 = gridData(1, 50);	
 // I like to log the data to the console for quick debugging
 
 var grid1 = d3.select("#grid1")
@@ -41,22 +41,33 @@ var grid1 = d3.select("#grid1")
 	.attr("width","500px")
 	.attr("height","500px");
 
-var grid2 = d3.select("#grid2")
-	.append("svg")
-	.attr("width","500px")
-	.attr("height","500px");
 	
-var row = grid1.selectAll(".row")
+var row1 = grid1.selectAll("#grid1 .row")
 	.data(gridData1)
 	.enter().append("g")
 	.attr("class", "row");
 
-var row = grid2.selectAll(".row")
-	.data(gridData1)
+var column1 = row1.selectAll(".square")
+	.data(function(d) { return d; })
+	.enter().append("rect")
+	.attr("class","square")
+	.attr("x", function(d) { return d.x; })
+	.attr("y", function(d) { return d.y; })
+	.attr("width", function(d) { return d.width; })
+	.attr("height", function(d) { return d.height; })
+	.style("fill", function(d){return (d.value == 1)?'red':'blue'});
+
+var grid2 = d3.select("#grid2")
+	.append("svg")
+	.attr("width","500px")
+	.attr("height","500px");
+
+var row2 = grid2.selectAll("#grid2 .row")
+	.data(gridData2)
 	.enter().append("g")
 	.attr("class", "row");
 	
-var column = row.selectAll(".square")
+var column2 = row2.selectAll(".square")
 	.data(function(d) { return d; })
 	.enter().append("rect")
 	.attr("class","square")
