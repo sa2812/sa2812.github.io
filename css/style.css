@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
 body {
   background-color: #000;
   overflow-x: hidden;
 }
+
 
 @font-face {
   font-family: Raleway;
@@ -94,4 +97,8 @@ html,body{
 
 .sdokw {
   font-family: vcr;
+}
+
+.magnets {
+  font-family: 'Bungee Inline', cursive;
 }
