@@ -1,27 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
-
 body {
   background-color: #000;
   overflow-x: hidden;
-}
-
-
-@font-face {
-  font-family: Raleway;
-  src: url('Raleway-Regular.ttf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: vcr;
-  src: url('vcr.ttf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: Quicksand;
-  src: url('Quicksand-Regular.ttf');
-  font-weight: 400;
 }
 
 #firstpage canvas {
@@ -36,7 +15,6 @@ body {
 #heading-text {
   position: absolute;
   z-index: 1;
-  /*padding-top:40vh;*/
   top: 50%;
   transform: translateY(-50%);*/
 }

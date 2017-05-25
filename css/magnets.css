@@ -1,0 +1,20 @@
+html * {
+	color: #333333;
+	font-family: cm;
+}
+
+#heading {
+	margin: 50px;
+}
+
+#heading h1 {
+	line-height: 1.2em;
+}
+
+#abstract {
+	margin: 50px;
+}
+
+.abstract {
+	line-height: 1.5em;
+}

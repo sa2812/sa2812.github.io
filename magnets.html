@@ -5,23 +5,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 	<link rel="shortcut icon" href="./img/favicon.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="./css/magnets.css" />
 	<script src="https://d3js.org/d3.v4.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="./js/physics/ferromagnetism.js"></script>
 </head>
 <body>
+<section id="heading">
+	<div class="row">
+		<div class="small-11 medium-7 small-centered columns text-center">
+			<h1>Thermodynamic simulations using the Ising model</h1>
+		</div>
+	</div>
+</section>
+<section id="abstract">
+	<div class="row">
+		<div class="small-12 medium-9 small-centered text-center columns">
+			<h5><strong>Abstract</strong></h5>
+			<p class="abstract">The Ising model is a simplified model of the spin-spin interactions between neighbouring atoms which gives rise to properties of the material such as specific heat capacity and magnetic susceptibility. The Metropolis algorithm is used to model the behaviour of a square array of atoms as the temperature changes. The phase transition is observed at a value of β ≈ 0.4. In subsequent run throughs, the value of β is held constant whilst the external magnetic field is varied.</p>
+		</div>
+	</div>
+</section>
+<section>
 	<div class="row">
 		<div class="large-6 columns text-center">
 			<div id="grid1">
 			</div>
-			<h1>Total energy = <span id="total-energy1"></span></h1>
+			<h5>Total energy = <span id="total-energy1"></span></h5>
 		</div>
 		<div class="large-6 columns text-center">
 			<div id="grid2">
 			</div>
-			<h1>Total energy = <span id="total-energy2"></span></h1>
+			<h5>Total energy = <span id="total-energy2"></span></h5>
 		</div>
 	</div>
+</section>
 	<script type="text/javascript" src="./js/physics/grid.js"></script>
 	<script>
 		$('#total-energy1').text(totalEnergy(gridData1));
