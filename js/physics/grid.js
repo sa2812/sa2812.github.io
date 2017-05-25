@@ -1,9 +1,9 @@
-function gridData(temp, N) {
+function gridData(temp, N, size) {
 	var data = new Array();
 	var xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
 	var ypos = 1;
-	var width = 400/N;
-	var height = 400/N;
+	var width = size/N;
+	var height = size/N;
 	var click = 0;
 	
 	var existing = generateArray(temp, N);
@@ -32,16 +32,18 @@ function gridData(temp, N) {
 	return data;
 }
 
-var gridData1 = gridData(0, 50);	
-var gridData2 = gridData(1, 50);	
+var gridWidth = d3.select("#grid1").node().getBoundingClientRect().width;
+var gridData1 = gridData(0, 50, gridWidth);	
+var gridData2 = gridData(1, 50, gridWidth);	
 // I like to log the data to the console for quick debugging
 
+var d3grid1 = d3.select("#grid1").node();
 var grid1 = d3.select("#grid1")
 	.append("svg")
-	.attr("width","400px")
-	.attr("height","400px");
+	.attr("width", d3grid1.getBoundingClientRect().width+"px")
+	.attr("height", d3grid1.getBoundingClientRect().width+"px");
 
-	
+
 var row1 = grid1.selectAll("#grid1 .row")
 	.data(gridData1)
 	.enter().append("g")
@@ -57,10 +59,11 @@ var column1 = row1.selectAll(".square")
 	.attr("height", function(d) { return d.height; })
 	.style("fill", function(d){return (d.value == 1)?'red':'blue'});
 
+var d3grid2 = d3.select("#grid2").node();
 var grid2 = d3.select("#grid2")
 	.append("svg")
-	.attr("width","400px")
-	.attr("height","400px");
+	.attr("width", d3grid2.getBoundingClientRect().width+"px")
+	.attr("height", d3grid2.getBoundingClientRect().width+"px");
 
 var row2 = grid2.selectAll("#grid2 .row")
 	.data(gridData2)
