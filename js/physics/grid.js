@@ -2,8 +2,8 @@ function gridData(temp, N) {
 	var data = new Array();
 	var xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
 	var ypos = 1;
-	var width = 500/N;
-	var height = 500/N;
+	var width = 400/N;
+	var height = 400/N;
 	var click = 0;
 	
 	var existing = generateArray(temp, N);
@@ -38,8 +38,8 @@ var gridData2 = gridData(1, 50);
 
 var grid1 = d3.select("#grid1")
 	.append("svg")
-	.attr("width","500px")
-	.attr("height","500px");
+	.attr("width","400px")
+	.attr("height","400px");
 
 	
 var row1 = grid1.selectAll("#grid1 .row")
@@ -59,8 +59,8 @@ var column1 = row1.selectAll(".square")
 
 var grid2 = d3.select("#grid2")
 	.append("svg")
-	.attr("width","500px")
-	.attr("height","500px");
+	.attr("width","400px")
+	.attr("height","400px");
 
 var row2 = grid2.selectAll("#grid2 .row")
 	.data(gridData2)
