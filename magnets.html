@@ -9,7 +9,20 @@
 	<link rel="stylesheet" type="text/css" href="./css/magnets.css" />
 	<script src="https://d3js.org/d3.v4.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/unveil.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 	<script type="text/javascript" src="./js/physics/ferromagnetism.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("img").unveil();
+
+		var cells = $('table.random-flips td');
+		window.setInterval(function(){
+			var rand = cells[Math.floor(Math.random() * cells.length)];
+			rand.innerText = (rand.innerText == '↑') ? '↓' : '↑';
+		}, 200);
+	});
+	</script>
 </head>
 <body>
 <section id="heading">
@@ -23,7 +36,7 @@
 	<div class="row">
 		<div class="small-12 medium-9 small-centered text-center columns">
 			<h5><strong>Abstract</strong></h5>
-			<p class="abstract">The Ising model is a simplified model of the spin-spin interactions between neighbouring atoms which gives rise to properties of the material such as specific heat capacity and magnetic susceptibility. The Metropolis algorithm is used to model the behaviour of a square array of atoms as the temperature changes. The phase transition is observed at a value of β ≈ 0.4. In subsequent run throughs, the value of β is held constant whilst the external magnetic field is varied.</p>
+			<p class="abstract">The Ising model is a simplified model of the spin-spin interactions between neighbouring atoms which gives rise to properties of the material such as specific heat capacity and magnetic susceptibility. The Metropolis algorithm is used to model the behaviour of a square array of atoms as the temperature changes.</p>
 		</div>
 	</div>
 </section>
@@ -31,13 +44,12 @@
 	<div class="row">
 		<div class="small-12 columns text-justify">
 			<h3>Introduction</h3>
-			<p>A ferromagnet is a material which exhibits a net magnetic field in the absence of an external magnetic field. The Ising model is used to model the behaviour of ferromagnets and can be used to determine the behaviour near a phase transition.</p>
-			<p>The model is based on a microscopic view of the material. For this version of the model, we will be using a 2-D square array as show in Figure 1.</p>
+			<p>A ferromagnet is a material which exhibits a net magnetic field in the absence of an external magnetic field. The Ising model is used to model the behaviour of ferromagnets and can be used to investigate the behaviour near a phase transition.</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="small-12 medium-4 small-centered text-center columns">
-			<table class="unstriped">
+			<table class="unstriped random-flips">
 				<tr>
 					<td>↑</td>
 					<td>↓</td>
@@ -74,7 +86,16 @@
 					<td>↑</td>
 				</tr>
 			</table>
-			<p><strong>Figure 1: </strong>An example 5x5 array</p>
+			<p><strong>Figure 1: </strong>Array of atoms with arrows indicating spin direction.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns text-justify">
+			<h3>Introduction</h3>
+			<p>A ferromagnet is a material which exhibits a net magnetic field in the absence of an external magnetic field. The Ising model is used to model the behaviour of ferromagnets and can be used to investigate the behaviour near a phase transition.</p>
+			\begin{equation}
+				E = -\frac{1}{2}\sum_{i, j}J_{ij} S_{i}\cdot S_{j} - \mu\sum_{k} S_{k}\cdot B
+			\end{equation}
 		</div>
 	</div>
 </section>
