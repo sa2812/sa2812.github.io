@@ -18,3 +18,9 @@ html * {
 .abstract {
 	line-height: 1.5em;
 }
+
+table.random-flips td {
+	width: 20%;
+	position: relative;
+	text-align: center;
+}

@@ -13,6 +13,14 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 	<script type="text/javascript" src="./js/physics/ferromagnetism.js"></script>
 	<script>
+	MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    },
+	    TeX: {equationNumbers: { autoNumber: "AMS" } }
+	});
+
 	$(document).ready(function(){
 		$("img").unveil();
 
@@ -20,7 +28,7 @@
 		window.setInterval(function(){
 			var rand = cells[Math.floor(Math.random() * cells.length)];
 			rand.innerText = (rand.innerText == '↑') ? '↓' : '↑';
-		}, 200);
+		}, 175);
 	});
 	</script>
 </head>
@@ -43,12 +51,12 @@
 <section id="introduction">
 	<div class="row">
 		<div class="small-12 columns text-justify">
-			<h3>Introduction</h3>
+			<h2>Introduction</h2>
 			<p>A ferromagnet is a material which exhibits a net magnetic field in the absence of an external magnetic field. The Ising model is used to model the behaviour of ferromagnets and can be used to investigate the behaviour near a phase transition.</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="small-12 medium-4 small-centered text-center columns">
+		<div class="small-8 medium-3 small-centered text-center columns">
 			<table class="unstriped random-flips">
 				<tr>
 					<td>↑</td>
@@ -86,16 +94,34 @@
 					<td>↑</td>
 				</tr>
 			</table>
-			<p><strong>Figure 1: </strong>Array of atoms with arrows indicating spin direction.</p>
+			<p><strong>Figure 1:</strong> Array of atoms with arrows indicating spin direction.</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="small-12 columns text-justify">
-			<h3>Introduction</h3>
 			<p>A ferromagnet is a material which exhibits a net magnetic field in the absence of an external magnetic field. The Ising model is used to model the behaviour of ferromagnets and can be used to investigate the behaviour near a phase transition.</p>
+			<p>Each atom is signified by a cell in the array and each cell has either spin-up ($+1$) or spin-down ($-1$). By considering these spins we can write an expression for the total interaction energy between the cells. This is given by Equation \eqref{eq:E}</p>
 			\begin{equation}
 				E = -\frac{1}{2}\sum_{i, j}J_{ij} S_{i}\cdot S_{j} - \mu\sum_{k} S_{k}\cdot B
+				\label{eq:E}
 			\end{equation}
+			<p>where $J$ is the spin-spin interaction energy per spin squared and $\mu B$ is the external magnetic field interaction energy per spin. The key point to consider here is that when considering the spin-spin interactions, only the interactions between neighbouring cells are considered. So, for a central cells, only the adjacent cells (up, down, left and right) contribute to the total energy and an assumption is made that the other cells do not (i.e. we ignore the interactions from cells that are diagonally located from a given cell.</p>
+		</div>
+	</div>
+</section>
+<section id="method">
+	<div class="row">
+		<div class="small-12 columns text-justify">
+			<h2>Method</h2>
+			<p>The Metropolis algorithm used Monte Carlo integration to simulate random selections from a probability density function (PDF). The algorithm is shown in Figure 2. Outside of the algorithm described in Figure 2, there is another to check the state of the system and evaluate whether or not equilibrium has been reached. To determine whether or not equilibrium has been reached, the overall energy of the system is tracked and when the rate of energy change slows down significantly, we can say that the system is approximately at equilibrium.</p>
+			<p>Once this state has been reached, the Metropolis algorithm is run for another 10,000 and the measurements of $E$ and $S$ are taken from this and later used to calculate $C$ and $\chi$.</p>
+		</div>
+		<div class="small-12 medium-5 small-centered columns text-center">
+			<img src="./img/metropolis-algorithm.png" />
+			<p><strong>Figure 2:</strong> Flow chart describing the implementation of the Metropolis algorithm in this model.</p>
+		</div>
+		<div class="small-12 columns text-justify">
+			<p>Aside from the Metropolis algorithm, a few other processes were required. One was the calculation of the total energy of an array. Considering the first term in Equation \ref{eq:E}, each site has four neighbours. However, if the sum of the four neighbours is taken then there would be some double counting and so to avoid this, we only consider the contribution from the cells to the right and the bottom of the current cell. Therefore, when adding up the cells (and making the array cyclic in $x$ and $y$) we can ensure that there is no double counting.</p>
 		</div>
 	</div>
 </section>
