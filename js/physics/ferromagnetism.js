@@ -9,8 +9,8 @@ function getRandomIntInclusive(min, max) {
 
 function pickRandomCell(array) {
 	var N = array.length;
-	x = getRandomIntInclusive(0, N);
-	y = getRandomIntInclusive(0, N);
+	x = getRandomIntInclusive(0, N-1);
+	y = getRandomIntInclusive(0, N-1);
 	return [x, y];
 }
 
@@ -24,11 +24,11 @@ function neighbourEnergy(array, x, y) {
 }
 
 function energyChange(array, beta, x, y) {
-    var currentValue = array[x][y];
+    var currentValue = array[x][y].value;
     var N = array.length;
 
     // up, right, down, left
-    deltaE = (array[(x - 1) % N][y].value + array[x][(y + 1) % N].value + array[(x + 1) % N][y].value + array[x][(y - 1) % N].value) * 
+    deltaE = (array[((x == 0 ? array.length : x) - 1) % N][y].value + array[x][(y + 1) % N].value + array[(x + 1) % N][y].value + array[x][((y == 0 ? array.length : y) - 1) % N].value) * 
     		 currentValue * 2 + muB * currentValue * 2;
 
     if (deltaE < 0) {
@@ -64,7 +64,7 @@ function totalMagnetisation(array) {
         if (typeof array[a].value == "number") {
             sum += array[a];
         } else {
-            sum += arraySum(array[a]);
+            sum += totalMagnetisation(array[a]);
         }
     }
     return sum;
@@ -99,4 +99,61 @@ function generateArray(temp, N) {
 		}
 	}
 	return array;
+}
+
+function iterate(array, beta, Etot=0) {
+    // Returns:
+    // energy        - A list of the energy of the array over the iterations.
+    // magnetisation - A list of the total magnetisation of the array.
+    // spin_sum      - The sum of all of the spins of the atoms in the array.
+    var energy   = [];
+    var spinSum  = [];
+    var sma      = [];
+    var totalE;
+    var N = array.length;
+
+    // If total energy has already been found previously then just input that
+    // value back in here instead of recalculating it all.
+    if (Etot != null) {
+        totalE = Etot;
+    } else {
+        totalE = totalEnergy(array);
+    }
+
+    energy.push(totalE);
+    spinSum.push(totalMagnetisation(array));
+
+    var iterations = 0;
+    var checkpoint = 5000;
+    // Let system reach equilibrium
+    while (iterations <= 20000 || Math.abs(sma[sma.length - 2] - sma[sma.length - 1]) > 0.1) {
+        rand          = pickRandomCell(array);
+        stepChange    = energyChange(array, beta, rand[0], rand[1]);
+        nextEnergy    = energy[energy.length - 1] + stepChange[0]
+        nextSpinSum = spinSum[spinSum.length - 1] + stepChange[1]
+        if (iterations == checkpoint) {
+            l = energy.slice(Math.max(energy.length - 2500, 1));
+            smaN = l.reduce((a, b) => a + b, 0)/parseFloat(l.length);
+            sma.push(smaN);
+            checkpoint += 2500;
+        }
+
+        energy.push(nextEnergy);
+        spinSum.push(nextSpinSum);
+        iterations += 1;
+
+        console.log(iterations);
+    }
+
+    for (i=0 ; i<10000 ; i++) {
+        rand        = pickRandomCell(array);
+        stepChange  = energyChange(array, beta, rand[0], rand[1]);
+        nextEnergy  = energy[energy.length - 1] + stepChange[0];
+        nextSpinSum = spinSum[spinSum.length - 1] + stepChange[1];
+
+        energy.push(nextEnergy);
+        spinSum.push(nextSpinSum);
+    }
+
+    return [energy.slice(Math.max(energy.length - iterations, 1)), spinSum.slice(Math.max(spinSum.length - iterations, 1)), array, energy[energy.length - 1], spinSum[spinSum.length - 1]/parseFloat(N**2)];
 }
