@@ -1,18 +1,18 @@
 function gridData(temp, N, size) {
-	var data = new Array();
-	var xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
-	var ypos = 1;
-	var width = size/N;
-	var height = size/N;
-	var click = 0;
+	let data = new Array();
+	let xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
+	let ypos = 1;
+	const width = size/N;
+	const height = size/N;
+	const click = 0;
 	
-	var existing = generateArray(temp, N);
+	const existing = generateArray(temp, N);
 	// iterate for rows	
-	for (var row = 0; row < N; row++) {
+	for (let row = 0; row < N; row++) {
 		data.push( new Array() );
 		
 		// iterate for cells/columns inside rows
-		for (var column = 0; column < N; column++) {
+		for (let column = 0; column < N; column++) {
 			data[row].push({
 				x: xpos,
 				y: ypos,
@@ -32,24 +32,21 @@ function gridData(temp, N, size) {
 	return data;
 }
 
-var gridWidth = d3.select("#grid1").node().getBoundingClientRect().width;
-var gridData1 = gridData(0, 50, gridWidth);	
-var gridData2 = gridData(1, 50, gridWidth);	
-// I like to log the data to the console for quick debugging
+const gridWidth = d3.select("#grid1").node().getBoundingClientRect().width;
+let gridData1 = gridData(0, 50, gridWidth);	
 
-var d3grid1 = d3.select("#grid1").node();
-var grid1 = d3.select("#grid1")
+const d3grid1 = d3.select("#grid1").node();
+
+const grid1 = d3.select("#grid1")
 	.append("svg")
 	.attr("width", d3grid1.getBoundingClientRect().width+"px")
 	.attr("height", d3grid1.getBoundingClientRect().width+"px");
-
-
-var row1 = grid1.selectAll("#grid1 .row")
+const row1 = grid1.selectAll("#grid1 .row")
 	.data(gridData1)
 	.enter().append("g")
 	.attr("class", "row");
 
-var column1 = row1.selectAll(".square")
+const column1 = row1.selectAll(".square")
 	.data(function(d) { return d; })
 	.enter().append("rect")
 	.attr("class","square")
@@ -59,18 +56,20 @@ var column1 = row1.selectAll(".square")
 	.attr("height", function(d) { return d.height; })
 	.style("fill", function(d){return (d.value == 1)?'red':'blue'});
 
-var d3grid2 = d3.select("#grid2").node();
-var grid2 = d3.select("#grid2")
+let gridData2 = gridData(1, 50, gridWidth);	
+
+const d3grid2 = d3.select("#grid2").node();
+const grid2 = d3.select("#grid2")
 	.append("svg")
 	.attr("width", d3grid2.getBoundingClientRect().width+"px")
 	.attr("height", d3grid2.getBoundingClientRect().width+"px");
 
-var row2 = grid2.selectAll("#grid2 .row")
+const row2 = grid2.selectAll("#grid2 .row")
 	.data(gridData2)
 	.enter().append("g")
 	.attr("class", "row");
 	
-var column2 = row2.selectAll(".square")
+const column2 = row2.selectAll(".square")
 	.data(function(d) { return d; })
 	.enter().append("rect")
 	.attr("class","square")

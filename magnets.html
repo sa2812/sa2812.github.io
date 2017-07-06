@@ -24,9 +24,9 @@
 	$(document).ready(function(){
 		$("img").unveil();
 
-		var cells = $('table.random-flips td');
+		const cells = $('table.random-flips td');
 		window.setInterval(function(){
-			var rand = cells[Math.floor(Math.random() * cells.length)];
+			let rand = cells[Math.floor(Math.random() * cells.length)];
 			rand.innerText = (rand.innerText == '↑') ? '↓' : '↑';
 		}, 175);
 	});
