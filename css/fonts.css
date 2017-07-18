@@ -2,30 +2,30 @@
 
 @font-face {
   font-family: Raleway;
-  src: url('../fonts/Raleway-Regular.ttf');
+  src: url('./fonts/Raleway-Regular.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: cm;
-  src: url('../fonts/cmunrm.ttf');
+  src: url('./fonts/cmunrm.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: cm;
-  src: url('../fonts/cmunrb.ttf');
+  src: url('./fonts/cmunrb.ttf');
   font-weight: bold;
 }
 
 @font-face {
   font-family: vcr;
-  src: url('../fonts/vcr.ttf');
+  src: url('./fonts/vcr.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: Quicksand;
-  src: url('../fonts/Quicksand-Regular.ttf');
+  src: url('./fonts/Quicksand-Regular.ttf');
   font-weight: 400;
 }
