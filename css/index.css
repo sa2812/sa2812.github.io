@@ -73,6 +73,10 @@ html,body{
   margin:0;
 }
 
+.tsp {
+    font-family: 'Della Respira', Palatino, serif;
+}
+
 .sdokw {
   font-family: vcr;
 }
